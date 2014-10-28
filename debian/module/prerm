@@ -1,0 +1,15 @@
+#! /bin/sh
+
+set -e
+
+CVERSION=`dpkg-query -W -f='${Version}' rtl8812au-kernel-source | sed 's/~.*$//'`
+
+case "$1" in
+  remove|upgrade)
+    echo "Removing all DKMS Modules"
+    dkms remove -m rtl8812au -v $CVERSION --all > /dev/null
+    echo "Done."
+    ;;
+esac
+
+exit 0

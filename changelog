@@ -1,0 +1,131 @@
+rtl8812au (4.2.2-13) unstable; urgency=low
+
+  * ReMake build system port and DKMS configuration
+
+ -- Ralf Kaestner <ralf.kaestner@gmail.com>  Tue, 28 Oct 2014 04:57:00 +0200
+
+rtl8812au (4.2.2-12) unstable; urgency=low
+
+  * Merge pull request #21 from archshift/master
+  * Added support for TP-Link Archer T4U AC1200
+
+ -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Fri, 11 Jul 2014 10:31:15 +0200
+
+rtl8812au (4.2.2-11) unstable; urgency=low
+
+  * Added support for TP-Link Archer T4U AC1200
+
+ -- archshift <admin@archshift.com>  Fri, 11 Jul 2014 04:26:01 +0200
+
+rtl8812au (4.2.2-10) unstable; urgency=low
+
+  * Merge pull request #18 from dtamada/master
+  * Added new usb interface (Buffalo WI-U2-433DM)
+
+ -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Mon, 09 Jun 2014 08:55:06 +0200
+
+rtl8812au (4.2.2-9) unstable; urgency=low
+
+  * Added new usb interface (Buffalo WI-U2-433DM)
+
+ -- Daiki Tamada <daiki.tamada@gmail.com>  Mon, 09 Jun 2014 06:24:20 +0200
+
+rtl8812au (4.2.2-8) unstable; urgency=low
+
+  * Merge pull request #15 from scrivy/master
+  * Added Vendor and Product ID for Edimax EW-7811UTC
+
+ -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Thu, 15 May 2014 08:46:54 +0200
+
+rtl8812au (4.2.2-7) unstable; urgency=low
+
+  * Added Vendor and Product ID for Edimax EW-7811UTC
+
+ -- scrivy <scrivinator@gmail.com>  Wed, 14 May 2014 23:30:31 +0200
+
+rtl8812au (4.2.2-6) unstable; urgency=low
+
+  * Merge pull request #9 from Harshavardhana/master
+  * Fix compilation issue for undeclared function during debug mode
+
+ -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Sun, 30 Mar 2014 05:31:57 +0200
+
+rtl8812au (4.2.2-5) unstable; urgency=low
+
+  * Fix compilation issue for undeclared function during debug mode
+  `proc_set_btcoex_dbg` is only defined if CONFIG_BT_COEXIST, so
+   move
+  * accordingly.
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Sat, 29 Mar 2014 06:33:42 +0100
+
+rtl8812au (4.2.2-4) unstable; urgency=low
+
+  * Merge pull request #5 from v1kko/master
+  * Removed ^M from ioctl_cfg80211.c so now it compiles!
+
+ -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Mon, 24 Feb 2014 22:08:24 +0100
+
+rtl8812au (4.2.2-3) unstable; urgency=low
+
+  * Removed ^M from ioctl_cfg80211.c so now it compiles!
+  (Something ****** windows line endings ****)
+
+ -- Victor Azizi <azizivictor@gmail.com>  Mon, 24 Feb 2014 22:04:41 +0100
+
+rtl8812au (4.2.2-2) unstable; urgency=low
+
+  * Merge pull request #3 from kpanic/netgear-a6100-customer-id
+  * Add Netgear A6100 Customer ID
+
+ -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Fri, 21 Feb 2014 18:53:32 +0100
+
+rtl8812au (4.2.2-1) unstable; urgency=low
+
+  * Add Netgear A6100 Customer ID
+
+ -- Marco Milanesi <kpanic@gmail.com>  Thu, 20 Feb 2014 21:46:06 +0100
+
+rtl8812au (4.2.2) unstable; urgency=low
+
+  * Merge pull request #2 from wuzzeb/master
+  * Update cfg80211 support to work with kernel up to 3.13.
+
+ -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Wed, 19 Feb 2014 23:01:17 +0100
+
+rtl8812au (4.2.2) unstable; urgency=low
+
+  * Update cfg80211 support to work with kernel up to 3.13.  Also enable
+    cfg80211 for AP mode
+
+ -- John Lenz <lenz@math.uic.edu>  Tue, 18 Feb 2014 22:09:14 +0100
+
+rtl8812au (4.2.2) unstable; urgency=low
+
+  * disable debugging by default
+
+ -- Anand Babu (AB) Periasamy <ab@unlocksmith.org>  Thu, 05 Sep 2013 04:58:27 +0200
+
+rtl8812au (4.2.2) unstable; urgency=low
+
+  * linux-3.10.x port
+
+ -- Anand Babu (AB) Periasamy <ab@unlocksmith.org>  Wed, 04 Sep 2013 23:44:30 +0200
+
+rtl8812au (4.2.2) unstable; urgency=low
+
+  * added IDs for Belkin F9L1109, TRENDnet Cameo & Linksys SerComm
+
+ -- Anand Babu (AB) Periasamy <ab@unlocksmith.org>  Wed, 04 Sep 2013 22:52:10 +0200
+
+rtl8812au (4.2.2) unstable; urgency=low
+
+  * initial import of rtl8812AU_8821AU_linux_v4.2.2_7502.20130517
+
+ -- Anand Babu (AB) Periasamy <ab@unlocksmith.org>  Wed, 04 Sep 2013 22:48:15 +0200
+
+rtl8812au (4.2.2) unstable; urgency=low
+
+  * Initial commit
+
+ -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Wed, 04 Sep 2013 22:38:50 +0200

@@ -1,0 +1,30 @@
+#! /bin/sh
+
+set -e
+
+CVERSION=`dpkg-query -W -f='${Version}' rtl8812au-kernel-source | sed 's/~.*$//'`
+
+ARCH=`dpkg --print-architecture`
+case $ARCH in
+  amd64)
+    ARCH="x86_64"
+    ;;
+  lpia)
+    ARCH="i686"
+    ;;
+  i386)
+    ARCH="i686"
+    ;;
+  *)
+    echo "WARNING: unsupported arch: $ARCH"
+    ARCH="$ARCH"
+    ;;
+esac
+
+case "$1" in
+  configure)
+    /usr/lib/dkms/common.postinst rtl8812au $CVERSION /usr/share/rtl8812au $ARCH $2 || exit $?
+    ;;
+esac
+
+exit 0
