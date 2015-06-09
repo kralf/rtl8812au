@@ -1,130 +1,316 @@
-rtl8812au (4.2.2-13) unstable; urgency=low
+rtl8812au (4.2.2-48) unstable; urgency=low
+
+  * Updated changelog
+
+ -- Ralf Kaestner <ralf.kaestner@gmail.com>  Tue, 09 Jun 2015 08:43:40 +0200
+
+rtl8812au (4.2.2-47) unstable; urgency=low
+
+  * Merge branch 'master' into remake
+
+ -- Ralf Kaestner <ralf.kaestner@gmail.com>  Tue, 09 Jun 2015 08:32:40 +0200
+
+rtl8812au (4.2.2-46) unstable; urgency=low
+
+  * Merge pull request #59 from rhadman/log-fix
+  * Fix debug message if conditions. These were using if (BAND_ON_5G) typ…
+
+ -- Harshavardhana <harsha@harshavardhana.net>  Tue, 02 Jun 2015 02:40:20 +0200
+
+rtl8812au (4.2.2-45) unstable; urgency=low
+
+  * Fix debug message if conditions. These were using if (BAND_ON_5G) type
+    logic, but these values are values from an enum and need to be compared
+    to something for proper testing.
+
+ -- Andrew Mann <andrew@divvycloud.com>  Mon, 01 Jun 2015 22:21:17 +0200
+
+rtl8812au (4.2.2-44) unstable; urgency=low
+
+  * Fix for Oops encountered using Edimax AC600 adapter. Logically this
+    can occur on any system with any 5G interface using this driver.
+
+ -- Andrew Mann <andrew@divvycloud.com>  Mon, 01 Jun 2015 22:08:47 +0200
+
+rtl8812au (4.2.2-43) unstable; urgency=low
+
+  * Add Raspberry Pi system build option
+
+ -- Andrew Mann <andrew@divvycloud.com>  Mon, 01 Jun 2015 16:30:22 +0200
+
+rtl8812au (4.2.2-42) unstable; urgency=low
+
+  * Update README.md
+  * Added -1.0 to make paths work (otherwise DKMS fails to find the folder
+    - tested on raspbian)
+
+ -- pgroenbech <pgroenbech@gmail.com>  Wed, 27 May 2015 23:58:57 +0200
+
+rtl8812au (4.2.2-41) unstable; urgency=low
+
+  * Cleanup makefile
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Thu, 21 May 2015 23:29:47 +0200
+
+rtl8812au (4.2.2-40) unstable; urgency=low
+
+  * Fix compilation problems on 3.18 kernel fixes #52
+  * Thanks to https://github.com/meoow for reporting the problem
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Thu, 21 May 2015 23:08:51 +0200
+
+rtl8812au (4.2.2-39) unstable; urgency=low
+
+  * Update for >= 4.0.0
+  * Added IF statement on line 227 to allow module to build on both +4.0
+    and also backward compatible to 3.x kernels.
+  * Tested on Kali Linux with customer kernel v4.0.4.
+
+ -- HackDefendr <gvibe06@gmail.com>  Thu, 21 May 2015 22:44:51 +0200
+
+rtl8812au (4.2.2-38) unstable; urgency=low
+
+  * Remove STATION_INFO_ASSOC_REQ_IES usage
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Tue, 19 May 2015 20:50:43 +0200
+
+rtl8812au (4.2.2-37) unstable; urgency=low
+
+  * Fix cfg80211_rx_mgmt missing argument on 3.12.0 --> 3.19.0 kernels
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Fri, 08 May 2015 20:12:34 +0200
+
+rtl8812au (4.2.2-36) unstable; urgency=low
+
+  * date-time warning suppression is not needed fixes #44
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Fri, 08 May 2015 11:40:58 +0200
+
+rtl8812au (4.2.2-35) unstable; urgency=low
+
+  * added fetch.sh
+
+ -- Karl-Philipp Richter <krichter722@aol.de>  Fri, 08 May 2015 11:30:03 +0200
+
+rtl8812au (4.2.2-34) unstable; urgency=low
+
+  * changed simple -e bash test with md5sum validation of kernel .deb packages
+    in vagrant compilation tests
+
+ -- Karl-Philipp Richter <krichter722@aol.de>  Fri, 08 May 2015 11:27:42 +0200
+
+rtl8812au (4.2.2-33) unstable; urgency=low
+
+  * exposed KVER make option to command line and added vagrant tests for
+    Linux 4.0.1 to make check
+
+ -- Karl-Philipp Richter <krichter722@aol.de>  Fri, 08 May 2015 01:37:37 +0200
+
+rtl8812au (4.2.2-32) unstable; urgency=low
+
+  * Typo BL->NL for 4.0.0 kernel
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Thu, 07 May 2015 20:31:24 +0200
+
+rtl8812au (4.2.2-31) unstable; urgency=low
+
+  * Support Linux 4.0.0, change enum NL82011 flags to match upstream changes
+    - fixes #41
+  * Also remove garbage characters from all files.
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Thu, 07 May 2015 04:57:39 +0200
+
+rtl8812au (4.2.2-30) unstable; urgency=low
+
+  * Remove wrong usage of __no_const
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Mon, 04 May 2015 21:10:58 +0200
+
+rtl8812au (4.2.2-29) unstable; urgency=low
+
+  * Add support for TP-Link Archer T4UH AC1200 thanks to @JudgeZarbi - fixes
+    #35
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Mon, 04 May 2015 20:56:18 +0200
+
+rtl8812au (4.2.2-28) unstable; urgency=low
+
+  * Ignore build files
+
+ -- Harshavardhana <harsh@harshavardhana.net>  Mon, 04 May 2015 20:54:32 +0200
+
+rtl8812au (4.2.2-27) unstable; urgency=low
+
+  * Merge pull request #17 from ITDefence/master
+  * fix for grsecurity kernel
+
+ -- Harshavardhana <harsha@harshavardhana.net>  Mon, 04 May 2015 20:53:35 +0200
+
+rtl8812au (4.2.2-26) unstable; urgency=low
+
+  * Merge pull request #27 from andreas-hofmann/master
+  * Fix stacktrace when unplugging wifi dongle
+
+ -- Harshavardhana <harsha@harshavardhana.net>  Mon, 04 May 2015 20:53:12 +0200
+
+rtl8812au (4.2.2-25) unstable; urgency=low
+
+  * Merge pull request #31 from vicentllongo/dkms
+  * Add dkms configuration file
+
+ -- Harshavardhana <harsha@harshavardhana.net>  Mon, 04 May 2015 20:51:52 +0200
+
+rtl8812au (4.2.2-24) unstable; urgency=low
+
+  * Merge pull request #36 from mpoly/patch-1
+  * Update usb_intf.c
+
+ -- Harshavardhana <harsha@harshavardhana.net>  Mon, 04 May 2015 20:51:14 +0200
+
+rtl8812au (4.2.2-23) unstable; urgency=low
+
+  * This seems to fix building when DBG = 1
+
+ -- bits3rpent <bits3rpent@plasmachameleon.com>  Fri, 01 May 2015 04:07:01 +0200
+
+rtl8812au (4.2.2-22) unstable; urgency=low
+
+  * Turned power save to off.. thought I did this
+
+ -- bits3rpent <bits3rpent@plasmachameleon.com>  Wed, 22 Apr 2015 21:33:51 +0200
+
+rtl8812au (4.2.2-21) unstable; urgency=low
+
+  * Forgot to delete a line
+
+ -- bits3rpent <bits3rpent@plasmachameleon.com>  Wed, 22 Apr 2015 20:58:56 +0200
+
+rtl8812au (4.2.2-20) unstable; urgency=low
+
+  * Added some support for devices.
+
+ -- bits3rpent <bits3rpent@plasmachameleon.com>  Wed, 22 Apr 2015 20:04:43 +0200
+
+rtl8812au (4.2.2-19) unstable; urgency=low
+
+  * Removed extra cfg80211_rx_mgmt parameter for 3.19 kernel
+
+ -- bits3rpent <bits3rpent@plasmachameleon.com>  Tue, 21 Apr 2015 20:23:57 +0200
+
+rtl8812au (4.2.2-18) unstable; urgency=low
+
+  * Update usb_intf.c
+  * Added support of D-Link DWA-172
+
+ -- mpoly <martin.polymorphe@gmail.com>  Sat, 18 Apr 2015 23:01:39 +0200
+
+rtl8812au (4.2.2-17) unstable; urgency=low
+
+  * Add dkms configuration file
+
+ -- Vicent Llongo <villosil@gmail.com>  Fri, 06 Feb 2015 19:41:39 +0100
+
+rtl8812au (4.2.2-16) unstable; urgency=low
+
+  * os_dep/linux/ioctl_cfg80211.c: Set iftype to station when allocating
+    wdev
+  * Signed-off-by: Andreas Hofmann <andreas.hofmann@corscience.de>
+
+ -- Andreas Hofmann <andreas.hofmann@corscience.de>  Thu, 04 Dec 2014 10:44:05 +0100
+
+rtl8812au (4.2.2-15) unstable; urgency=low
+
+  * os_dep/linux/os_intfs.c: Do not set iftype to monitor when closing
+    dev
+  * Signed-off-by: Andreas Hofmann <andreas.hofmann@corscience.de>
+
+ -- Andreas Hofmann <andreas.hofmann@corscience.de>  Thu, 04 Dec 2014 10:40:54 +0100
+
+rtl8812au (4.2.2-14) unstable; urgency=low
 
   * ReMake build system port and DKMS configuration
 
- -- Ralf Kaestner <ralf.kaestner@gmail.com>  Tue, 28 Oct 2014 04:57:00 +0200
+ -- Ralf Kaestner <ralf.kaestner@gmail.com>  Tue, 28 Oct 2014 16:58:07 +0100
 
-rtl8812au (4.2.2-12) unstable; urgency=low
-
-  * Merge pull request #21 from archshift/master
-  * Added support for TP-Link Archer T4U AC1200
-
- -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Fri, 11 Jul 2014 10:31:15 +0200
-
-rtl8812au (4.2.2-11) unstable; urgency=low
+rtl8812au (4.2.2-13) unstable; urgency=low
 
   * Added support for TP-Link Archer T4U AC1200
 
  -- archshift <admin@archshift.com>  Fri, 11 Jul 2014 04:26:01 +0200
 
-rtl8812au (4.2.2-10) unstable; urgency=low
-
-  * Merge pull request #18 from dtamada/master
-  * Added new usb interface (Buffalo WI-U2-433DM)
-
- -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Mon, 09 Jun 2014 08:55:06 +0200
-
-rtl8812au (4.2.2-9) unstable; urgency=low
+rtl8812au (4.2.2-12) unstable; urgency=low
 
   * Added new usb interface (Buffalo WI-U2-433DM)
 
  -- Daiki Tamada <daiki.tamada@gmail.com>  Mon, 09 Jun 2014 06:24:20 +0200
 
-rtl8812au (4.2.2-8) unstable; urgency=low
+rtl8812au (4.2.2-11) unstable; urgency=low
 
-  * Merge pull request #15 from scrivy/master
-  * Added Vendor and Product ID for Edimax EW-7811UTC
+  * fix grsecurity issue: assignment of member ‘free_hal_data’ in read-only
+    object
 
- -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Thu, 15 May 2014 08:46:54 +0200
+ -- Anton <blshkv>  Sun, 01 Jun 2014 14:16:43 +0200
 
-rtl8812au (4.2.2-7) unstable; urgency=low
+rtl8812au (4.2.2-10) unstable; urgency=low
 
   * Added Vendor and Product ID for Edimax EW-7811UTC
 
  -- scrivy <scrivinator@gmail.com>  Wed, 14 May 2014 23:30:31 +0200
 
-rtl8812au (4.2.2-6) unstable; urgency=low
-
-  * Merge pull request #9 from Harshavardhana/master
-  * Fix compilation issue for undeclared function during debug mode
-
- -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Sun, 30 Mar 2014 05:31:57 +0200
-
-rtl8812au (4.2.2-5) unstable; urgency=low
+rtl8812au (4.2.2-9) unstable; urgency=low
 
   * Fix compilation issue for undeclared function during debug mode
-  `proc_set_btcoex_dbg` is only defined if CONFIG_BT_COEXIST, so
-   move
+    `proc_set_btcoex_dbg` is only defined if CONFIG_BT_COEXIST, so
+    move
   * accordingly.
 
  -- Harshavardhana <harsh@harshavardhana.net>  Sat, 29 Mar 2014 06:33:42 +0100
 
-rtl8812au (4.2.2-4) unstable; urgency=low
-
-  * Merge pull request #5 from v1kko/master
-  * Removed ^M from ioctl_cfg80211.c so now it compiles!
-
- -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Mon, 24 Feb 2014 22:08:24 +0100
-
-rtl8812au (4.2.2-3) unstable; urgency=low
+rtl8812au (4.2.2-8) unstable; urgency=low
 
   * Removed ^M from ioctl_cfg80211.c so now it compiles!
-  (Something ****** windows line endings ****)
+    (Something ****** windows line endings ****)
 
  -- Victor Azizi <azizivictor@gmail.com>  Mon, 24 Feb 2014 22:04:41 +0100
 
-rtl8812au (4.2.2-2) unstable; urgency=low
-
-  * Merge pull request #3 from kpanic/netgear-a6100-customer-id
-  * Add Netgear A6100 Customer ID
-
- -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Fri, 21 Feb 2014 18:53:32 +0100
-
-rtl8812au (4.2.2-1) unstable; urgency=low
+rtl8812au (4.2.2-7) unstable; urgency=low
 
   * Add Netgear A6100 Customer ID
 
  -- Marco Milanesi <kpanic@gmail.com>  Thu, 20 Feb 2014 21:46:06 +0100
 
-rtl8812au (4.2.2) unstable; urgency=low
-
-  * Merge pull request #2 from wuzzeb/master
-  * Update cfg80211 support to work with kernel up to 3.13.
-
- -- Anand Babu (AB) Periasamy <abperiasamy@gmail.com>  Wed, 19 Feb 2014 23:01:17 +0100
-
-rtl8812au (4.2.2) unstable; urgency=low
+rtl8812au (4.2.2-6) unstable; urgency=low
 
   * Update cfg80211 support to work with kernel up to 3.13.  Also enable
     cfg80211 for AP mode
 
  -- John Lenz <lenz@math.uic.edu>  Tue, 18 Feb 2014 22:09:14 +0100
 
-rtl8812au (4.2.2) unstable; urgency=low
+rtl8812au (4.2.2-5) unstable; urgency=low
 
   * disable debugging by default
 
  -- Anand Babu (AB) Periasamy <ab@unlocksmith.org>  Thu, 05 Sep 2013 04:58:27 +0200
 
-rtl8812au (4.2.2) unstable; urgency=low
+rtl8812au (4.2.2-4) unstable; urgency=low
 
   * linux-3.10.x port
 
  -- Anand Babu (AB) Periasamy <ab@unlocksmith.org>  Wed, 04 Sep 2013 23:44:30 +0200
 
-rtl8812au (4.2.2) unstable; urgency=low
+rtl8812au (4.2.2-3) unstable; urgency=low
 
   * added IDs for Belkin F9L1109, TRENDnet Cameo & Linksys SerComm
 
  -- Anand Babu (AB) Periasamy <ab@unlocksmith.org>  Wed, 04 Sep 2013 22:52:10 +0200
 
-rtl8812au (4.2.2) unstable; urgency=low
+rtl8812au (4.2.2-2) unstable; urgency=low
 
   * initial import of rtl8812AU_8821AU_linux_v4.2.2_7502.20130517
 
  -- Anand Babu (AB) Periasamy <ab@unlocksmith.org>  Wed, 04 Sep 2013 22:48:15 +0200
 
-rtl8812au (4.2.2) unstable; urgency=low
+rtl8812au (4.2.2-1) unstable; urgency=low
 
   * Initial commit
 
