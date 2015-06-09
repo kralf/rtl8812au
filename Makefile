@@ -36,7 +36,7 @@ CONFIG_SDIO_HCI = n
 CONFIG_GSPI_HCI = n
 
 CONFIG_MP_INCLUDED = y
-CONFIG_POWER_SAVING = n
+CONFIG_POWER_SAVING = y
 CONFIG_USB_AUTOSUSPEND = n
 CONFIG_HW_PWRP_DETECTION = n
 CONFIG_WIFI_TEST = n
@@ -140,8 +140,8 @@ _OUTSRC_FILES := hal/OUTSRC/odm_debug.o	\
 		hal/OUTSRC/odm.o\
 		hal/OUTSRC/HalPhyRf.o
 
-
-########### HAL_RTL8192C #################################
+		
+########### HAL_RTL8192C #################################										
 
 ifeq ($(CONFIG_RTL8192C), y)
 RTL871X = rtl8192c
@@ -166,7 +166,7 @@ _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
 			hal/$(RTL871X)/$(HCI_NAME)/$(HCI_NAME)_halinit.o \
 			hal/$(RTL871X)/$(HCI_NAME)/rtl$(MODULE_NAME)_led.o \
 			hal/$(RTL871X)/$(HCI_NAME)/rtl$(MODULE_NAME)_xmit.o \
-			hal/$(RTL871X)/$(HCI_NAME)/rtl$(MODULE_NAME)_recv.o
+			hal/$(RTL871X)/$(HCI_NAME)/rtl$(MODULE_NAME)_recv.o	
 
 _HAL_INTFS_FILES += hal/$(RTL871X)/$(HCI_NAME)/$(HCI_NAME)_ops_linux.o
 
@@ -175,19 +175,19 @@ ifeq ($(CONFIG_MP_INCLUDED), y)
 _HAL_INTFS_FILES += hal/$(RTL871X)/$(RTL871X)_mp.o
 endif
 
-_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/odm_RTL8192C.o \
-	hal/OUTSRC/$(RTL871X)/HalDMOutSrc8192C_CE.o
+_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/odm_RTL8192C.o\
+								hal/OUTSRC/$(RTL871X)/HalDMOutSrc8192C_CE.o
 
 ifeq ($(CONFIG_USB_HCI), y)
-_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/Hal8192CUFWImg_CE.o \
-	hal/OUTSRC/$(RTL871X)/Hal8192CUPHYImg_CE.o \
-	hal/OUTSRC/$(RTL871X)/Hal8192CUMACImg_CE.o
+_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/Hal8192CUFWImg_CE.o	\
+								hal/OUTSRC/$(RTL871X)/Hal8192CUPHYImg_CE.o	\
+								hal/OUTSRC/$(RTL871X)/Hal8192CUMACImg_CE.o
 endif
 
 ifeq ($(CONFIG_PCI_HCI), y)
-_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/Hal8192CEFWImg_CE.o \
-	hal/OUTSRC/$(RTL871X)/Hal8192CEPHYImg_CE.o \
-	hal/OUTSRC/$(RTL871X)/Hal8192CEMACImg_CE.o
+_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/Hal8192CEFWImg_CE.o	\
+								hal/OUTSRC/$(RTL871X)/Hal8192CEPHYImg_CE.o	\
+								hal/OUTSRC/$(RTL871X)/Hal8192CEMACImg_CE.o
 endif
 
 endif
@@ -223,19 +223,20 @@ ifeq ($(CONFIG_MP_INCLUDED), y)
 _HAL_INTFS_FILES += hal/$(RTL871X)/$(RTL871X)_mp.o
 endif
 
-_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/odm_RTL8192D.o \
-	hal/OUTSRC/$(RTL871X)/HalDMOutSrc8192D_CE.o
+_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/odm_RTL8192D.o\
+								hal/OUTSRC/$(RTL871X)/HalDMOutSrc8192D_CE.o
 
+								
 ifeq ($(CONFIG_USB_HCI), y)
 _OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/Hal8192DUFWImg_CE.o \
-	hal/OUTSRC/$(RTL871X)/Hal8192DUPHYImg_CE.o \
-	hal/OUTSRC/$(RTL871X)/Hal8192DUMACImg_CE.o
+								hal/OUTSRC/$(RTL871X)/Hal8192DUPHYImg_CE.o \
+								hal/OUTSRC/$(RTL871X)/Hal8192DUMACImg_CE.o
 endif
 
 ifeq ($(CONFIG_PCI_HCI), y)
 _OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/Hal8192DEFWImg_CE.o \
-	hal/OUTSRC/$(RTL871X)/Hal8192DEPHYImg_CE.o \
-	hal/OUTSRC/$(RTL871X)/Hal8192DEMACImg_CE.o
+								hal/OUTSRC/$(RTL871X)/Hal8192DEPHYImg_CE.o \
+								hal/OUTSRC/$(RTL871X)/Hal8192DEMACImg_CE.o
 endif
 
 endif
@@ -259,10 +260,10 @@ endif
 EXTRA_CFLAGS += -DCONFIG_RTL8723A
 
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-	hal/$(RTL871X)/Hal8723PwrSeq.o \
-	hal/$(RTL871X)/$(RTL871X)_xmit.o \
-	hal/$(RTL871X)/$(RTL871X)_sreset.o
-
+				hal/$(RTL871X)/Hal8723PwrSeq.o\
+				hal/$(RTL871X)/$(RTL871X)_xmit.o \
+				hal/$(RTL871X)/$(RTL871X)_sreset.o
+				
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
 			hal/$(RTL871X)/$(RTL871X)_phycfg.o \
 			hal/$(RTL871X)/$(RTL871X)_rf6052.o \
@@ -273,7 +274,7 @@ _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
 			hal/$(RTL871X)/$(HCI_NAME)/rtl$(MODULE_NAME)_led.o \
 			hal/$(RTL871X)/$(HCI_NAME)/rtl$(MODULE_NAME)_xmit.o \
 			hal/$(RTL871X)/$(HCI_NAME)/rtl$(MODULE_NAME)_recv.o
-
+			
 ifeq ($(CONFIG_SDIO_HCI), y)
 _HAL_INTFS_FILES += hal/$(RTL871X)/$(HCI_NAME)/$(HCI_NAME)_ops.o
 else
@@ -309,10 +310,10 @@ _OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/Hal8723EHWImg_CE.o
 endif
 
 #hal/OUTSRC/$(RTL871X)/HalHWImg8723A_FW.o
-_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/HalHWImg8723A_BB.o \
-	hal/OUTSRC/$(RTL871X)/HalHWImg8723A_MAC.o \
-	hal/OUTSRC/$(RTL871X)/HalHWImg8723A_RF.o \
-	hal/OUTSRC/$(RTL871X)/odm_RegConfig8723A.o
+_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/HalHWImg8723A_BB.o\
+								hal/OUTSRC/$(RTL871X)/HalHWImg8723A_MAC.o\
+								hal/OUTSRC/$(RTL871X)/HalHWImg8723A_RF.o\
+								hal/OUTSRC/$(RTL871X)/odm_RegConfig8723A.o
 
 _OUTSRC_FILES += hal/OUTSRC/rtl8192c/HalDMOutSrc8192C_CE.o
 
@@ -338,9 +339,9 @@ endif
 EXTRA_CFLAGS += -DCONFIG_RTL8188E
 
 _HAL_INTFS_FILES +=	hal/HalPwrSeqCmd.o \
-	hal/$(RTL871X)/Hal8188EPwrSeq.o \
-	hal/$(RTL871X)/$(RTL871X)_xmit.o \
-	hal/$(RTL871X)/$(RTL871X)_sreset.o
+					hal/$(RTL871X)/Hal8188EPwrSeq.o\
+ 					hal/$(RTL871X)/$(RTL871X)_xmit.o\
+					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
 			hal/$(RTL871X)/$(RTL871X)_phycfg.o \
@@ -365,16 +366,16 @@ endif
 
 ifeq ($(CONFIG_MP_INCLUDED), y)
 _HAL_INTFS_FILES += hal/$(RTL871X)/$(RTL871X)_mp.o
-endif
+endif			
 
 #hal/OUTSRC/$(RTL871X)/Hal8188EFWImg_CE.o
-_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/HalHWImg8188E_MAC.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8188E_BB.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8188E_RF.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8188E_FW.o \
-		hal/OUTSRC/$(RTL871X)/HalPhyRf_8188e.o \
-		hal/OUTSRC/$(RTL871X)/odm_RegConfig8188E.o \
-		hal/OUTSRC/$(RTL871X)/Hal8188ERateAdaptive.o \
+_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/HalHWImg8188E_MAC.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8188E_BB.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8188E_RF.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8188E_FW.o\
+		hal/OUTSRC/$(RTL871X)/HalPhyRf_8188e.o\
+		hal/OUTSRC/$(RTL871X)/odm_RegConfig8188E.o\
+		hal/OUTSRC/$(RTL871X)/Hal8188ERateAdaptive.o\
 		hal/OUTSRC/$(RTL871X)/odm_RTL8188E.o
 
 endif
@@ -396,9 +397,9 @@ MODULE_NAME = 8192ee
 endif
 EXTRA_CFLAGS += -DCONFIG_RTL8192E
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-	hal/$(RTL871X)/Hal8192EPwrSeq.o \
-	hal/$(RTL871X)/$(RTL871X)_xmit.o \
-	hal/$(RTL871X)/$(RTL871X)_sreset.o
+					hal/$(RTL871X)/Hal8192EPwrSeq.o\
+					hal/$(RTL871X)/$(RTL871X)_xmit.o\
+					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
 			hal/$(RTL871X)/$(RTL871X)_phycfg.o \
@@ -426,12 +427,12 @@ _HAL_INTFS_FILES += hal/$(RTL871X)/$(RTL871X)_mp.o
 endif
 
 #hal/OUTSRC/$(RTL871X)/HalHWImg8188E_FW.o
-_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/HalHWImg8192E_MAC.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8192E_BB.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8192E_RF.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8192E_FW.o \
-		hal/OUTSRC/$(RTL871X)/HalPhyRf_8192e.o \
-		hal/OUTSRC/$(RTL871X)/odm_RegConfig8192E.o \
+_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/HalHWImg8192E_MAC.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8192E_BB.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8192E_RF.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8192E_FW.o\
+		hal/OUTSRC/$(RTL871X)/HalPhyRf_8192e.o\
+		hal/OUTSRC/$(RTL871X)/odm_RegConfig8192E.o\
 		hal/OUTSRC/$(RTL871X)/odm_RTL8192E.o
 
 endif
@@ -453,8 +454,8 @@ endif
 
 _HAL_INTFS_FILES +=  hal/HalPwrSeqCmd.o \
 					hal/$(RTL871X)/Hal8812PwrSeq.o \
-					hal/$(RTL871X)/Hal8821APwrSeq.o \
-					hal/$(RTL871X)/$(RTL871X)_xmit.o \
+					hal/$(RTL871X)/Hal8821APwrSeq.o\
+					hal/$(RTL871X)/$(RTL871X)_xmit.o\
 					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
@@ -484,15 +485,15 @@ endif
 
 ifeq ($(CONFIG_RTL8812A), y)
 EXTRA_CFLAGS += -DCONFIG_RTL8812A
-_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/HalHWImg8812A_FW.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_MAC.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_BB.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_RF.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_TestChip_FW.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_TestChip_MAC.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_TestChip_BB.o \
-		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_TestChip_RF.o \
-		hal/OUTSRC/$(RTL871X)/HalPhyRf_8812A.o \
+_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/HalHWImg8812A_FW.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_MAC.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_BB.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_RF.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_TestChip_FW.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_TestChip_MAC.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_TestChip_BB.o\
+		hal/OUTSRC/$(RTL871X)/HalHWImg8812A_TestChip_RF.o\
+		hal/OUTSRC/$(RTL871X)/HalPhyRf_8812A.o\
 		hal/OUTSRC/$(RTL871X)/odm_RegConfig8812A.o
 endif
 
@@ -512,17 +513,17 @@ MODULE_NAME := 8821as
 endif
 
 EXTRA_CFLAGS += -DCONFIG_RTL8821A
-_OUTSRC_FILES += hal/OUTSRC/rtl8821a/HalHWImg8821A_FW.o \
-		hal/OUTSRC/rtl8821a/HalHWImg8821A_MAC.o \
-		hal/OUTSRC/rtl8821a/HalHWImg8821A_BB.o \
-		hal/OUTSRC/rtl8821a/HalHWImg8821A_RF.o \
-		hal/OUTSRC/rtl8821a/HalHWImg8821A_TestChip_MAC.o \
-		hal/OUTSRC/rtl8821a/HalHWImg8821A_TestChip_BB.o \
-		hal/OUTSRC/rtl8821a/HalHWImg8821A_TestChip_RF.o \
-		hal/OUTSRC/rtl8812a/HalPhyRf_8812A.o \
-		hal/OUTSRC/rtl8821a/HalPhyRf_8821A.o \
-		hal/OUTSRC/rtl8821a/odm_RegConfig8821A.o
-endif
+_OUTSRC_FILES += hal/OUTSRC/rtl8821a/HalHWImg8821A_FW.o\
+		hal/OUTSRC/rtl8821a/HalHWImg8821A_MAC.o\
+		hal/OUTSRC/rtl8821a/HalHWImg8821A_BB.o\
+		hal/OUTSRC/rtl8821a/HalHWImg8821A_RF.o\
+		hal/OUTSRC/rtl8821a/HalHWImg8821A_TestChip_MAC.o\
+		hal/OUTSRC/rtl8821a/HalHWImg8821A_TestChip_BB.o\
+		hal/OUTSRC/rtl8821a/HalHWImg8821A_TestChip_RF.o\
+		hal/OUTSRC/rtl8812a/HalPhyRf_8812A.o\
+		hal/OUTSRC/rtl8821a/HalPhyRf_8821A.o\
+		hal/OUTSRC/rtl8821a/odm_RegConfig8821A.o		
+endif	
 
 
 endif
@@ -535,8 +536,8 @@ MODULE_NAME = 8723bs
 EXTRA_CFLAGS += -DCONFIG_RTL8723B
 
 _HAL_INTFS_FILES += hal/HalPwrSeqCmd.o \
-	hal/$(RTL871X)/Hal8723BPwrSeq.o \
-	hal/$(RTL871X)/$(RTL871X)_sreset.o
+					hal/$(RTL871X)/Hal8723BPwrSeq.o\
+					hal/$(RTL871X)/$(RTL871X)_sreset.o
 
 _HAL_INTFS_FILES +=	hal/$(RTL871X)/$(RTL871X)_hal_init.o \
 			hal/$(RTL871X)/$(RTL871X)_phycfg.o \
@@ -558,24 +559,25 @@ ifeq ($(CONFIG_BT_COEXIST), y)
 _HAL_INTFS_FILES +=  hal/$(RTL871X)/rtl8723b_bt-coexist.o
 endif
 
-_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/HalHWImg8723B_BB.o \
-	hal/OUTSRC/$(RTL871X)/HalHWImg8723B_MAC.o \
-	hal/OUTSRC/$(RTL871X)/HalHWImg8723B_RF.o \
-	hal/OUTSRC/$(RTL871X)/HalHWImg8723B_FW.o \
-	hal/OUTSRC/$(RTL871X)/HalHWImg8723B_MP.o \
-	hal/OUTSRC/$(RTL871X)/odm_RegConfig8723B.o \
-	hal/OUTSRC/$(RTL871X)/HalPhyRf_8723B.o \
-	hal/OUTSRC/$(RTL871X)/odm_RTL8723B.o
+_OUTSRC_FILES += hal/OUTSRC/$(RTL871X)/HalHWImg8723B_BB.o\
+								hal/OUTSRC/$(RTL871X)/HalHWImg8723B_MAC.o\
+								hal/OUTSRC/$(RTL871X)/HalHWImg8723B_RF.o\
+								hal/OUTSRC/$(RTL871X)/HalHWImg8723B_FW.o\
+								hal/OUTSRC/$(RTL871X)/HalHWImg8723B_MP.o\
+								hal/OUTSRC/$(RTL871X)/odm_RegConfig8723B.o\
+								hal/OUTSRC/$(RTL871X)/HalPhyRf_8723B.o\
+								hal/OUTSRC/$(RTL871X)/odm_RTL8723B.o
+
 endif
 
-########### AUTO_CFG  #################################
-
+########### AUTO_CFG  #################################	
+		
 ifeq ($(CONFIG_AUTOCFG_CP), y)
 
-ifeq ($(CONFIG_MULTIDRV), y)
+ifeq ($(CONFIG_MULTIDRV), y)	
 $(shell cp $(TopDIR)/autoconf_multidrv_$(HCI_NAME)_linux.h $(TopDIR)/include/autoconf.h)
 else
-ifeq ($(CONFIG_RTL8188E)$(CONFIG_SDIO_HCI),yy)
+ifeq ($(CONFIG_RTL8188E)$(CONFIG_SDIO_HCI),yy) 
 $(shell cp $(TopDIR)/autoconf_rtl8189e_$(HCI_NAME)_linux.h $(TopDIR)/include/autoconf.h)
 else
 $(shell cp $(TopDIR)/autoconf_$(RTL871X)_$(HCI_NAME)_linux.h $(TopDIR)/include/autoconf.h)
@@ -649,7 +651,7 @@ EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
 SUBARCH := $(shell uname -m | sed -e s/i.86/i386/)
 ARCH ?= $(SUBARCH)
 CROSS_COMPILE ?=
-KVER  ?= $(shell uname -r)
+KVER  := $(shell uname -r)
 KSRC := /lib/modules/$(KVER)/build
 MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
 INSTALL_PREFIX :=
@@ -730,7 +732,7 @@ endif
 ifeq ($(CONFIG_PLATFORM_ARM_RPI), y)
 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
 ARCH := arm
-CROSS_COMPILE :=
+CROSS_COMPILE := 
 KVER  := $(shell uname -r)
 KSRC ?= /lib/modules/$(KVER)/build
 MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
@@ -808,7 +810,7 @@ KSRC ?= /lib/modules/2.6.31-770-g0e46b52/source
 endif
 
 ifeq ($(CONFIG_PLATFORM_FS_MX61), y)
-EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
+EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN 
 ARCH := arm
 CROSS_COMPILE := /home/share/CusEnv/FreeScale/arm-eabi-4.4.3/bin/arm-eabi-
 KSRC ?= /home/share/CusEnv/FreeScale/FS_kernel_env
@@ -922,7 +924,7 @@ endif
 ifeq ($(CONFIG_PLATFORM_SZEBOOK), y)
 EXTRA_CFLAGS += -DCONFIG_BIG_ENDIAN
 ARCH:=arm
-CROSS_COMPILE:=/opt/crosstool2/bin/armeb-unknown-linux-gnueabi-
+CROSS_COMPILE:=/opt/crosstool2/bin/armeb-unknown-linux-gnueabi- 
 KVER:= 2.6.31.6
 KSRC:= ../code/linux-2.6.31.6-2020/
 endif
@@ -969,7 +971,7 @@ KSRC:= $(CFGDIR)/../../kernel/linux-$(KERNEL_VER)
 endif
 
 
-ifeq ($(CONFIG_MULTIDRV), y)
+ifeq ($(CONFIG_MULTIDRV), y)	
 
 ifeq ($(CONFIG_SDIO_HCI), y)
 MODULE_NAME := rtw_sdio
@@ -1022,7 +1024,7 @@ $(MODULE_NAME)-$(CONFIG_INTEL_WIDI) += core/rtw_intel_widi.o
 
 $(MODULE_NAME)-$(CONFIG_WAPI_SUPPORT) += core/rtw_wapi.o	\
 					core/rtw_wapi_sms4.o
-
+					
 $(MODULE_NAME)-y += $(_OS_INTFS_FILES)
 $(MODULE_NAME)-y += $(_HAL_INTFS_FILES)
 $(MODULE_NAME)-y += $(_OUTSRC_FILES)
@@ -1067,7 +1069,7 @@ config_r:
 
 clean:
 	cd hal/OUTSRC/ ; rm -fr */*.mod.c */*.mod */*.o */.*.cmd */*.ko
-	cd hal/OUTSRC/ ; rm -fr *.mod.c *.mod *.o .*.cmd *.ko
+	cd hal/OUTSRC/ ; rm -fr *.mod.c *.mod *.o .*.cmd *.ko 
 	cd hal/led ; rm -fr *.mod.c *.mod *.o .*.cmd *.ko
 	cd hal ; rm -fr */*/*.mod.c */*/*.mod */*/*.o */*/.*.cmd */*/*.ko
 	cd hal ; rm -fr */*.mod.c */*.mod */*.o */.*.cmd */*.ko
@@ -1081,12 +1083,3 @@ clean:
 	rm -fr .tmp_versions
 endif
 
-check:
-	vagrant up || vagrant init ubuntu/vivid32; vagrant up
-	TMP=$$(vagrant ssh-config | grep Port | cut -d ' ' -f 4);\
-	ssh -p $$TMP -i $(HOME)/.vagrant.d/insecure_private_key vagrant@localhost 'bash -s' < fetch.sh
-	vagrant ssh -c 'sudo dpkg -i linux-headers-4.0.1-040001_4.0.1-040001.201504290935_all.deb linux-headers-4.0.1-040001-generic_4.0.1-040001.201504290935_i386.deb linux-image-4.0.1-040001-generic_4.0.1-040001.201504290935_i386.deb'
-	vagrant ssh -c 'sudo apt-get update && sudo apt-get install --yes git build-essential'
-	vagrant ssh -c 'if ! [ -d rtl8812AU_8821AU_linux ] ; then git clone https://github.com/abperiasamy/rtl8812AU_8821AU_linux.git; fi'
-	vagrant ssh -c 'cd rtl8812AU_8821AU_linux; make KVER=4.0.1-040001-generic'
-	vagrant ssh -c 'cd rtl8812AU_8821AU_linux; sudo make install'
